@@ -17,12 +17,7 @@ public class Zadanie4 {
 	
 	public static void main(String[] args) {
 		FilePrintController controller = new FilePrintController(filesToSearch, searchedWord);
-		controller.searchAction();
-//		FilePrinterAndAdder file = new FilePrinterAndAdder(filesToSearch[1]);
-//		file.printIfContains(searchedWord);
-//		file.addIfContains(searchedWord);
-//		FilePrinterAndAdder.listFilesContainingWord();
-		
+		controller.searchAction();		
 	}
 }
 
