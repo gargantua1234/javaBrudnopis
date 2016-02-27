@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.aro.traverse.DirectoryTraverser;
+
 public class Zadanie4 {
 	private static final String[] filesToSearch = {
 			"KsiegaPierwsza.txt","PanTadeusz.txt", "KsiegaDruga.txt", 
@@ -15,9 +17,15 @@ public class Zadanie4 {
 			};
 	private static final String searchedWord = "cie";
 	
+	private static String directoryPath = "C:\\Users\\Arek\\Desktop\\java work\\Brudnopis";
+	
 	public static void main(String[] args) {
-		FilePrintController controller = new FilePrintController(filesToSearch, searchedWord);
-		controller.searchAction();		
+//		FilePrintController controller = new FilePrintController(filesToSearch, searchedWord);
+//		controller.searchAction();
+		
+		
+		DirectoryTraverser directory = new DirectoryTraverser(directoryPath);
+		directory.traverse();
 	}
 }
 
