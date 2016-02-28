@@ -4,16 +4,18 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
 
 /**
  * Class responsible for directory traversing
  */
 public class DirectoryTraverser {
 	private Path pathToDirectory= null;
-	private FilePrints filePrintMethod = null;
+	private SimpleFileVisitor<Path> fileVisitAction = null;
 	
-	public DirectoryTraverser(String pathToDirectory){
+	public DirectoryTraverser(String pathToDirectory, SimpleFileVisitor<Path> fileVisitAction){
 		checkIfDirectoryExists(pathToDirectory);
+		this.fileVisitAction = fileVisitAction;
 		
 	}
 	private boolean checkIfDirectoryExists(String path){
@@ -30,13 +32,12 @@ public class DirectoryTraverser {
 		if(pathToDirectory != null)
 			startTraverse();
 		else
-			System.out.println("Wrong path to directory");
+			System.out.println("Wrong directory path");
 	}
 	
 	public void startTraverse(){
-		filePrintMethod = new FilePrints();
 		try{
-			Files.walkFileTree(pathToDirectory, filePrintMethod);
+			Files.walkFileTree(pathToDirectory, fileVisitAction);
 		}
 		catch(IOException exception){
 			exception.printStackTrace();

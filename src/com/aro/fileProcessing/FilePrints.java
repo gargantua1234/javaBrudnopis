@@ -1,4 +1,4 @@
-package com.aro.traverse;
+package com.aro.fileProcessing;
 
 import static java.nio.file.FileVisitResult.CONTINUE;
 

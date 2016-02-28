@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.aro.fileProcessing.FileAdds;
 import com.aro.traverse.DirectoryTraverser;
 
 public class Zadanie4 {
@@ -23,9 +24,14 @@ public class Zadanie4 {
 //		FilePrintController controller = new FilePrintController(filesToSearch, searchedWord);
 //		controller.searchAction();
 		
+		/** list all files and subdirectories in specified directory */
+//		DirectoryTraverser directory = new DirectoryTraverser(directoryPath, new FilePrints());
+//		directory.traverse();
 		
-		DirectoryTraverser directory = new DirectoryTraverser(directoryPath);
-		directory.traverse();
+		/** list all files which names contain specified word in name */
+		DirectoryTraverser secondDirectory = new DirectoryTraverser(directoryPath, new FileAdds("git"));
+		secondDirectory.traverse();
+		FileAdds.listFileNamesContainingWord();
 	}
 }
 
