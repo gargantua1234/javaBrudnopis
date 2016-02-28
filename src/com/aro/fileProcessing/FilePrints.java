@@ -1,35 +1,14 @@
 package com.aro.fileProcessing;
 
-import static java.nio.file.FileVisitResult.CONTINUE;
-
-import java.io.IOException;
-import java.nio.file.FileVisitResult;
 import java.nio.file.Path;
-import java.nio.file.SimpleFileVisitor;
-import java.nio.file.attribute.BasicFileAttributes;
 
-/**
- * Class implementing action while traversing directory
- * 
- */
-public class FilePrints extends SimpleFileVisitor<Path>{
+public class FilePrints implements FileProsessor {
 	
-	@Override
-	public FileVisitResult visitFile(Path file, BasicFileAttributes attributes ){
-		System.out.format("%-10s %s%n","File:", file);
-		return CONTINUE;
+	public void visitFileAction(Path filePath){
+		System.out.format("%-11s %s%n", "File:", filePath.toString());	
 	}
 	
-	@Override
-	public FileVisitResult postVisitDirectory(Path directory, IOException exception){
-		System.out.format("%-10s %s%n", "Directory:", directory);
-		return CONTINUE;
+	public void visitDirectoryAction(Path directoryPath){
+		System.out.format("%-11s %s%n", "Directory:", directoryPath.toString());
 	}
-	
-	@Override
-	public FileVisitResult visitFileFailed(Path file, IOException exception){
-		System.err.println(exception);
-		return CONTINUE;
-	}
-
 }
