@@ -10,13 +10,17 @@ public class Zadanie4 {
 //		directory.traverse();
 		
 		/** list all files which names contain specified word in name */
-		FileAdds fileNames = new FileAdds(".txt");
-		DirectoryTraverser secondDirectory = new DirectoryTraverser(directoryPath, new FileVisitor(fileNames));
-		secondDirectory.traverse();
-		fileNames.listFileContainingWord();
+//		FileAdds fileNames = new FileAdds(".txt");
+//		DirectoryTraverser secondDirectory = new DirectoryTraverser(directoryPath, new FileVisitor(fileNames));
+//		secondDirectory.traverse();
+//		fileNames.listFileContainingWord();
 		
-		/** 
-		*/
+		/** */
+		FileContentChecker fileContentChecker = new FileContentChecker("cie");
+		DirectoryTraverser secondDirectory = new DirectoryTraverser(directoryPath, 
+				new FileVisitor(fileContentChecker));
+		secondDirectory.traverse();
+		fileContentChecker.listFileContainingWord();
 		
 	}
 }
