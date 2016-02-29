@@ -5,9 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FileAdds implements FileProsessor{
-	private static List<String> fileNames = new LinkedList<>();
-	private String keyWord;
-	private String fileName;
+	protected List<String> fileNames = new LinkedList<>();
+	protected String keyWord;
+	protected String fileName;
 	
 	public FileAdds(String keyWord){
 		this.keyWord = keyWord;
@@ -23,13 +23,13 @@ public class FileAdds implements FileProsessor{
 		addIfContainsWord(filePath);
 	}
 	
-	private void addIfContainsWord(Path pathToFile){
+	protected void addIfContainsWord(Path pathToFile){
 		fileName = pathToFile.toString();
 		if (fileName.contains(keyWord))
 			fileNames.add(fileName);
 	}
 	
-	public static void listFileNamesContainingWord(){
+	public  void listFileContainingWord(){
 		for (String file: fileNames)
 			System.out.println(file);
 	}

@@ -2,7 +2,7 @@ import com.aro.fileProcessing.*;
 import com.aro.traverse.DirectoryTraverser;
 
 public class Zadanie4 {	
-	private static String directoryPath = "C:\\Users\\Arek\\Desktop\\java work\\Brudnopis";
+	private static String directoryPath = "C:\\Users\\Arek\\Desktop\\java work\\Brudnopis\\src";
 	
 	public static void main(String[] args) {		
 		/** list all files and subdirectories in specified directory */
@@ -10,9 +10,14 @@ public class Zadanie4 {
 //		directory.traverse();
 		
 		/** list all files which names contain specified word in name */
-		DirectoryTraverser secondDirectory = new DirectoryTraverser(directoryPath, new FileVisitor(new FileAdds("git")));
+		FileAdds fileNames = new FileAdds(".txt");
+		DirectoryTraverser secondDirectory = new DirectoryTraverser(directoryPath, new FileVisitor(fileNames));
 		secondDirectory.traverse();
-		FileAdds.listFileNamesContainingWord();
+		fileNames.listFileContainingWord();
+		
+		/** 
+		*/
+		
 	}
 }
 
