@@ -1,21 +1,13 @@
 package com.aro.fileProcessing;
 
 import java.nio.file.Path;
-import java.util.LinkedList;
-import java.util.List;
 
-public class FileAdds implements FileProsessor{
-	protected List<String> fileNames = new LinkedList<>();
+public class FileAdds extends FileProsessor{
 	protected String keyWord;
 	protected String fileName;
 	
 	public FileAdds(String keyWord){
 		this.keyWord = keyWord;
-	}
-	
-	
-	@Override
-	public void visitDirectoryAction(Path directoryPath){
 	}
 	
 	@Override
@@ -29,10 +21,9 @@ public class FileAdds implements FileProsessor{
 			fileNames.add(fileName);
 	}
 	
-	public  void listFileContainingWord(){
+	public  void listFiles(){
 		for (String file: fileNames)
 			System.out.println(file);
 	}
 	
-
 }

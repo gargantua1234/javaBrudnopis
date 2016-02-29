@@ -6,21 +6,25 @@ public class Zadanie4 {
 	
 	public static void main(String[] args) {		
 		/** list all files and subdirectories in specified directory */
-//		DirectoryTraverser directory = new DirectoryTraverser(directoryPath, new FileVisitor(new FilePrints()));
+//		FilePrints filePrints = new FilePrints();
+//		DirectoryTraverser directory = new DirectoryTraverser(directoryPath, 
+//				new FileVisitor(filePrints));
 //		directory.traverse();
+//		filePrints.listFiles();
 		
 		/** list all files which names contain specified word in name */
 //		FileAdds fileNames = new FileAdds(".txt");
 //		DirectoryTraverser secondDirectory = new DirectoryTraverser(directoryPath, new FileVisitor(fileNames));
 //		secondDirectory.traverse();
-//		fileNames.listFileContainingWord();
+//		fileNames.listFiles();
 		
 		/** */
 		FileContentChecker fileContentChecker = new FileContentChecker("cie");
 		DirectoryTraverser secondDirectory = new DirectoryTraverser(directoryPath, 
 				new FileVisitor(fileContentChecker));
 		secondDirectory.traverse();
-		fileContentChecker.listFileContainingWord();
+		fileContentChecker.reverseSort();
+		fileContentChecker.listFiles();
 		
 	}
 }
