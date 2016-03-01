@@ -1,5 +1,8 @@
-import com.aro.fileProcessing.*;
-import com.aro.traverse.DirectoryTraverser;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import com.aro.fileInfo.FileSizeInfo;
+import com.aro.fileInfo.WordCounter;
 
 public class Zadanie4 {	
 	private static String directoryPath = "C:\\Users\\Arek\\Desktop\\java work\\Brudnopis\\src";
@@ -19,13 +22,18 @@ public class Zadanie4 {
 //		fileNames.listFiles();
 		
 		/** */
-		FileContentChecker fileContentChecker = new FileContentChecker("cie");
-		DirectoryTraverser secondDirectory = new DirectoryTraverser(directoryPath, 
-				new FileVisitor(fileContentChecker));
-		secondDirectory.traverse();
-		fileContentChecker.reverseSort();
-		fileContentChecker.listFiles();
+//		FileContentChecker fileContentChecker = new FileContentChecker("cie");
+//		DirectoryTraverser secondDirectory = new DirectoryTraverser(directoryPath, 
+//				new FileVisitor(fileContentChecker));
+//		secondDirectory.traverse();
+//		fileContentChecker.reverseSort();
+//		fileContentChecker.listFiles();
 		
+		String fileName = "assets\\PanTadeusz.txt";
+		WordCounter wordCounter = new WordCounter(fileName);
+		wordCounter.printSize();
+		wordCounter.printWordAppearance("cie");
+		wordCounter.printWordAppearance("CIE");
 	}
 }
 
