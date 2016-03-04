@@ -3,6 +3,7 @@ import java.nio.file.Paths;
 
 import com.aro.fileInfo.FileSizeInfo;
 import com.aro.fileInfo.WordCounter;
+import com.aro.fileInfo.WordSummary;
 
 public class Zadanie4 {	
 	private static String directoryPath = "C:\\Users\\Arek\\Desktop\\java work\\Brudnopis\\src";
@@ -30,10 +31,15 @@ public class Zadanie4 {
 //		fileContentChecker.listFiles();
 		
 		String fileName = "assets\\PanTadeusz.txt";
-		WordCounter wordCounter = new WordCounter(fileName);
-		wordCounter.printSize();
-		wordCounter.printWordAppearance("cie");
-		wordCounter.printWordAppearance("CIE");
+//		WordCounter wordCounter = new WordCounter(fileName);
+//		wordCounter.printSize();
+//		wordCounter.printWordAppearance("cie");
+//		wordCounter.printWordAppearance("CIE");
+		
+		WordSummary ws = new WordSummary(fileName);
+		ws.makewordList();
+		ws.printWordSummary();
+		
 	}
 }
 
